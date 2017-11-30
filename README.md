@@ -17,7 +17,7 @@ can be specified, but that's not a great experience. Two options moving forwards
 - OPENAPI support, annotations on types will expose via an openapi doc default cols.
 There is a PR open for this.
 - k8s machinery, can implement interfaces in storage layer that tell kubectl the default
-columns. Possibly a better soln, but in likely won't be available until 1.10.
+columns. Possibly a better solution, but in likely won't be available until 1.10.
 
 Once the OPENAPI PR gets merged, kubectl requires a flag to look at it. It's
 an inconveniently long flag, so there is a desire to be able to configure this
@@ -55,7 +55,7 @@ Controller needs various permutations of checks to confirm a user can
 perform a given action. Desire is to allow a cluster admin to say: sally can
 use this set of SCs and plans, Bill can do everything, Jane can only do X or Y.
 
-Involes executing SAR (Subject Access Reviews) to confirm users can `$VERB`
+Involves executing SAR (Subject Access Reviews) to confirm users can `$VERB`
 some catalog resource. Possible to introduce additional verbs beyond the normal
 CRUD, so something like `provision` would actually be valid.
 
@@ -74,12 +74,12 @@ what the story is with plugins upstream.
 
 Use-case is to find a 3rd party broker and register that broker into your own
 namespace. From there, you can see the cluster available class/plans, along
-with yoru own ns scoped ones.
+with your own namespace scoped ones.
 
 Would require namespaced scoped broker.
 
 Agreed:
-* There is a need for namespace scoped brokers, which implised ns scoped classes
+* There is a need for namespace scoped brokers, which implies namespace scoped classes
 and plans as well.
 * The objects that are available must be able to be filtered in some way, possibly
 based on role access.
@@ -91,11 +91,11 @@ based on role access.
 What happens when an update fails? Spec says nothing about failures.
 Agreed that if an update fails, instance should be in the state that it was
 before the upgrade request was made. Going to need error codes to more
-granularly describe exactly what occured so systems can respond intelligently.
+granularly describe exactly what occurred so systems can respond intelligently.
 
 There is a desire for v3 to have some kind of rollback if an update fails.
 
-Seperately, right now, spec only allows for specifying whether or not
+Separately, right now, spec only allows for specifying whether or not
 an instance can have its plan changed. There is not visibility into what
 transitions are available. AI to propose describing valid transition matrix
 for plans (APB spec can currently do this, broker has the data as well).
@@ -110,7 +110,7 @@ for plans (APB spec can currently do this, broker has the data as well).
 * Broker health
   - Should the platform ping the broker?
   - Is ping sufficient?
-  - Proactive helath vs error rate detection
+  - Proactive health vs error rate detection
   - Ping doesn't tell the whole story
 ```
 
@@ -133,8 +133,8 @@ back into the proposal. Examples include things like backup/restore, logging/met
 **Orphan Mitigation**
 
 Some complaints around the language of the spec being ambiguous. AI to
-remove "orphan mitigation" section and the term "orgphan", and just
-talk about when its expeted to "clean up" for each failed op.
+remove "orphan mitigation" section and the term "orphan", and just
+talk about when its expected to "clean up" for each failed op.
 
 **Swagger Doc & JSON Schema**
 
@@ -144,7 +144,7 @@ Conclusion:
 Moving to 2 docs, machine readable swagger and human readable spec. Spec takes
 precedence. Any PR that changes the spec must also update swagger.
 
-Also a desire for endpoint that returns the entire json schema instead of
+Also a desire for endpoint that returns the entire JSON schema instead of
 embedding it in the catalog. would allow for reference to common bits rather
 than a lot of duplication. Likely to help things like UIs w/ payload sizes.
 Proposal incoming. No separate endpoint, revisit in v3.
@@ -162,11 +162,11 @@ Opportunity to help here.
 
 Mostly considering how to add MTLS language to the spec.
 Possibly can help with feedback re: opaque bearer auth, which is already in
-use within Openshift.
+use within OpenShift.
 
 **2.14 Release Planning**
 
-GET and Async Bindings goals for v2.14, targetting end of Jan 2018.
+GET and Async Bindings goals for v2.14, targeting end of Jan 2018.
 Opaque Bearer Token auth stretch for v2.14
 
 **v3 Goals**
@@ -177,6 +177,6 @@ Opaque Bearer Token auth stretch for v2.14
 **Service Meshes**
 
 Ex: App running in CloudFoundry, service (DB) running in kube. Want to bind
-to that service. What's involved in making sure we can reach/talk to eachother,
+to that service. What's involved in making sure we can reach/talk to each other,
 and authenticate the parties? How is istio involved? Issues with separate
 istio control planes.

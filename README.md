@@ -125,7 +125,7 @@ granularly describe exactly what occurred so systems can respond intelligently.
 There is a desire for v3 to have some kind of rollback if an update fails.
 
 Separately, right now, spec only allows for specifying whether or not
-an instance can have its plan changed. There is not visibility into what
+an instance can have its plan changed. There is no visibility into what
 transitions are available. AI to propose describing valid transition matrix
 for plans (APB spec can currently do this, broker has the data as well).
 
@@ -163,7 +163,7 @@ back into the proposal. Examples include things like backup/restore, logging/met
 
 Some complaints around the language of the spec being ambiguous. AI to
 remove "orphan mitigation" section and the term "orphan", and just
-talk about when its expected to "clean up" for each failed op.
+talk about when it's expected to "clean up" for each failed op.
 
 **Swagger Doc & JSON Schema**
 
@@ -187,21 +187,31 @@ https://github.com/Haishi2016/osb-checker
 Conversation about where this will live, and how it can be made better.
 Opportunity to help here.
 
+It was stated that the desire was to transfer ownership to the
+openservicebrokerapi github organization. Whether this goes into the mainline
+spec repo was still up for debate.
+
 **Auth workflows**
 
-Mostly considering how to add MTLS language to the spec.
-Possibly can help with feedback re: opaque bearer auth, which is already in
-use within OpenShift.
+Mostly considering how to add MTLS (mutual TLS, not multiplexed TLS) language
+to the spec.  Possibly can help with feedback re: opaque bearer auth, which
+is already in use within OpenShift.
 
 **2.14 Release Planning**
 
 GET and Async Bindings goals for v2.14, targeting end of Jan 2018.
 Opaque Bearer Token auth stretch for v2.14
 
+AI: we need to update the async binding, get and token auth PRs with comments
+about how well the implement went based on the API perspective.
+
 **v3 Goals**
 
 * Introducing idea of Spec / Status where brokers can indicate supported version.
 * Push based watch streams! Removes need for last_operation.
+* Need to think about how v2 and v3 brokers will live side by side.
+* Proposal to remove synchronous calls.
+* Version negotiation
 
 **Service Meshes**
 

@@ -1,4 +1,33 @@
 # Catalog Highlights
+**Attendees**
+  * Red Hat
+    * Paul Morie
+    * Erik Nelson
+    * Jesus Rodriguez
+    * Jessica Forrester
+    * Matthew Staebler
+    * Jay Boyd
+    * Jeff Peeler
+  * Pivotal
+    * Alex Ley
+    * Matt McNeeney
+  * Google
+    * Ville Aikas
+    * Scott Nichols
+    * Michael Kibbe
+    * Martin Gannholm
+  * IBM
+    * Doug Davis
+    * Morgan Bauer
+  * Microsoft
+    * Kent Rancourt
+  * Manifold
+    * James Bowes
+    * Gary Poster
+  * Dell EMC
+    * Mike Rhodes
+  * SAP
+    * Florian Muller
 
 **Async Bind**
 
